@@ -5,7 +5,6 @@
 ## Confira seu lançamento em:
 
 * 🔗 [DISCORD](https://discord.gg/)   
-* 💻 [Acesse nosso GitHub](https://github.com)
 
 ## 🎯 Objetivo do Projeto
 
