@@ -1,32 +1,4 @@
-ESTRUTURA ATUAL:
-
-src/
-├── apps/
-│   ├── Nubank.jsx
-│   ├── Settings.jsx
-│   ├── Messages.jsx
-│   ├── Phone.jsx
-│   ├── Contacts.jsx
-│   └── Camera.jsx
-│
-├── components/
-│   ├── HomeScreen.jsx
-│   ├── Dock.jsx
-│   ├── LockScreen.jsx
-│   ├── PatternUnlock.jsx
-│   ├── StatusBar.jsx
-│   └── DynamicIsland.jsx
-│
-├── assets/
-│   ├── wallpapers/
-│   └── icons/
-│
-└── styles/
-    ├── iphone.css
-    ├── lockscreen.css
-    └── nubank.css
-
-# 📱 iPhone Framework React - Documentação Resumida
+# 📱 iPhone iOS15s Framework React - Documentação Resumida
 
 ## 🎯 Objetivo do Projeto
 
