@@ -4,7 +4,7 @@
 # Implementação Futura para FiveM/NUI em meu canal
 ## Confira seu lançamento em:
 
-* 🔗 [DISCORD](https://discord.gg/)   
+* 🔗 [DISCORD](https://discord.gg/fcJXYzST7)   
 
 ## 🎯 Objetivo do Projeto
 
