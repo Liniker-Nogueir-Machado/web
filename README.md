@@ -1,36 +1,13 @@
-ESTRUTURA ATUAL:
-
-src/
-├── apps/
-│   ├── Nubank.jsx
-│   ├── Settings.jsx
-│   ├── Messages.jsx
-│   ├── Phone.jsx
-│   ├── Contacts.jsx
-│   └── Camera.jsx
-│
-├── components/
-│   ├── HomeScreen.jsx
-│   ├── Dock.jsx
-│   ├── LockScreen.jsx
-│   ├── PatternUnlock.jsx
-│   ├── StatusBar.jsx
-│   └── DynamicIsland.jsx
-│
-├── assets/
-│   ├── wallpapers/
-│   └── icons/
-│
-└── styles/
-    ├── iphone.css
-    ├── lockscreen.css
-    └── nubank.css
-
-# 📱 iPhone Framework React - Documentação Resumida
+📱 iPhone Framework React
+## Isto é apenas um Layout
+# Implementação Futura para FiveM/NUI
+## Confira seu lançamento em:
+# ![DISCORD](C:/Users/linikDownloads/discord.png)
 
 ## 🎯 Objetivo do Projeto
 
-Criar um celular estilo iPhone totalmente funcional para integração com FiveM/NUI utilizando React, reproduzindo a experiência do iOS com aplicativos próprios, tela de bloqueio, notificações e sistema bancário.
+### Criar um celular estilo iPhone totalmente funcional para integração com **FiveM/NUI** utilizando React, reproduzindo a experiência do iOS com aplicativos próprios, tela de bloqueio, notificações, sistema bancário e muito mais...
+este Smartphone/FiveM traz a melhor experiência possivel e grande imersividade em seu conteúdo, calro que como se trata de um produto digital não terá 100% das funcionalidades de um smartfone fisico Real mas estarei sempre trabalhando com suas atualizaçoes futuras com mais conteúdos que se asemelhão ao produto Real.
 
 ---
 
@@ -44,22 +21,17 @@ Criar um celular estilo iPhone totalmente funcional para integração com FiveM/
 * Barra de status
 * Animação de abrir/fechar com tecla K
 * Escala configurável do aparelho
-* Interface totalmente em Português Brasil
 
 ---
 
-## 🔒 Sistema de Bloqueio
+## 🕒 Sistema de Hora
+* Sincronizado com a web. 
+* Hora e data | Renderizando em tempo Real. |
+
+## 🔒 Sistema de Bloqueio Tela
 
 ### Lock Screen
-
-Implementado:
-
-* Hora em destaque
-* Data
-* Notificações
-* Wallpaper
-* Botão de câmera
-* Clique na tela para abrir desbloqueio
+* Desbloqueio Padrão poor Pin
 
 ### Pattern Unlock
 
@@ -71,6 +43,15 @@ Implementado:
 * Desbloqueio após padrão correto
 * Bloqueio automático ao fechar celular
 
+Implementado:
+
+* Hora em destaque
+* Data
+* Notificações
+* Wallpaper
+* Botão de câmera
+* Clique na tela para abrir desbloqueio
+* 
 ---
 
 ## 🏠 Tela Inicial (Home)
@@ -82,7 +63,9 @@ Implementado:
 * Ícones centralizados
 * Layout estilo iOS
 
-Apps presentes:
+Apps presentes: também escalonavel
+** Podendo ter mais Apps 
+conforme necessidade do usuário
 
 * WhatsApp
 * Instagram
@@ -155,7 +138,7 @@ Implementado:
 
 Faixa:
 
-* 30%
+* 50%
 * até
 * 100%
 
@@ -166,13 +149,9 @@ Faixa:
 Preparado:
 
 * Wallpaper na tela inicial
-* Wallpaper na tela bloqueada
-
-Ainda não implementado:
-
-* Troca de tema pelo usuário
-* Temas claros
-* Temas escuros
+* Wallpaper Carousel na tela bloqueada
+  ** Troca Wallpapers a cada 5min
+  mas tempo pode ser definida pelo usuario
 
 ---
 
@@ -323,3 +302,21 @@ Falta:
 6. Galeria
 7. Temas
 8. Integração completa com FiveM
+
+   # Lembrando que isto tudo é só a Frameqork
+   # !!!!! ------------ ATENÇÃO ! NÃO TENTE INSTALAR NA SUA BASE NAO IRA FUNCIONAR ---------- !!!!!!
+
+    ## Para visualizar este projeto funcionando corretamente vc ira precisar:
+
+  # 🚀 Instalar:
+1. Visual Studio Code
+2. Baixar e extrair o zip [web-main.rar] ![GITHUB](C:/Users/linikDownloads/github.png) https://github.com/Liniker-Nogueir-Machado/web
+3. Abrir a pasta web-main > src e dentro de src clique direito mouse ABRIR COM CODE.
+4. Abrir um termminal no vs code
+5. instalar o vite usando npm create vite@latest
+6. Contatos
+7. Câmera
+8. Galeria
+9. Temas
+10. Integração completa com:
+    FiveM ![SCRIPTS LUA](C:/Users/linikDownloads/lua.svg) ([https://exemplo.com](https://discord.gg/sR3UHQ8cWT)) Futuramente]
