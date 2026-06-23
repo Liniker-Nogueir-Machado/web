@@ -1,12 +1,15 @@
 📱 iPhone Framework React
 ## Isto é apenas um Layout
-# Implementação Futura para FiveM/NUI
+   # !!!!! ------------ ATENÇÃO ! NÃO TENTE INSTALAR NA SUA BASE FIVEM, NAO IRA FUNCIONAR ---------- !!!!!!
+# Implementação Futura para FiveM/NUI em meu canal
 ## Confira seu lançamento em:
-# ![DISCORD](C:/Users/linikDownloads/discord.png)
+
+* 🔗 [DISCORD](https://discord.gg/)   
+* 💻 [Acesse nosso GitHub](https://github.com)
 
 ## 🎯 Objetivo do Projeto
 
-### Criar um celular estilo iPhone totalmente funcional para integração com **FiveM/NUI** utilizando React, reproduzindo a experiência do iOS com aplicativos próprios, tela de bloqueio, notificações, sistema bancário e muito mais...
+### Criar um celular estilo iPhone totalmente funcional para integração com __FiveM/NUI__ utilizando React, reproduzindo a experiência do iOS com aplicativos próprios, tela de bloqueio, notificações, sistema bancário e muito mais...
 este Smartphone/FiveM traz a melhor experiência possivel e grande imersividade em seu conteúdo, calro que como se trata de um produto digital não terá 100% das funcionalidades de um smartfone fisico Real mas estarei sempre trabalhando com suas atualizaçoes futuras com mais conteúdos que se asemelhão ao produto Real.
 
 ---
@@ -303,20 +306,4 @@ Falta:
 7. Temas
 8. Integração completa com FiveM
 
-   # Lembrando que isto tudo é só a Frameqork
-   # !!!!! ------------ ATENÇÃO ! NÃO TENTE INSTALAR NA SUA BASE NAO IRA FUNCIONAR ---------- !!!!!!
-
-    ## Para visualizar este projeto funcionando corretamente vc ira precisar:
-
-  # 🚀 Instalar:
-1. Visual Studio Code
-2. Baixar e extrair o zip [web-main.rar] ![GITHUB](C:/Users/linikDownloads/github.png) https://github.com/Liniker-Nogueir-Machado/web
-3. Abrir a pasta web-main > src e dentro de src clique direito mouse ABRIR COM CODE.
-4. Abrir um termminal no vs code
-5. instalar o vite usando npm create vite@latest
-6. Contatos
-7. Câmera
-8. Galeria
-9. Temas
-10. Integração completa com:
-    FiveM ![SCRIPTS LUA](C:/Users/linikDownloads/lua.svg) ([https://exemplo.com](https://discord.gg/sR3UHQ8cWT)) Futuramente]
+   # Lembrando que isto tudo é só a Framework
