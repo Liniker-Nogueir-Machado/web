@@ -1,0 +1,303 @@
+.nubank-actions {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.nubank-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.nubank-tabs button {
+    height: 85px;
+    border: none;
+    border-radius: 18px;
+    background: #8A05BE;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nubank-tabs button:hover {
+    transform: scale(1.03);
+}
+
+.nubank-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.nubank-screen {
+    background: #8A05BE;
+}
+
+.nubank-screen.dark input {
+    background: #262626;
+    color: white;
+}
+
+.nubank-screen.dark .history-item {
+    background: #202020;
+}
+
+.nubank-screen.dark h1,
+.nubank-screen.dark h2,
+.nubank-screen.dark h3 {
+    color: white;
+}
+
+.nubank-screen.dark span {
+    color: white;
+}
+
+.nubank-screen.dark input {
+    color: white;
+}
+
+.nubank-screen.dark .nubank-tabs button {
+    background: #2b2b2b;
+}
+
+.nubank-screen.dark .nubank-tabs button:hover {
+    background: #333;
+}
+
+.nubank-screen.dark {
+    background: #111;
+    color: white;
+}
+
+.nubank-screen.dark p {
+    color: #ddd;
+}
+
+.nubank-screen.dark .nubank-card {
+    background: #1c1c1c;
+    color: white;
+}
+
+.nubank-screen.dark .nubank-card-title {
+    color: #ddd;
+}
+
+.nubank-screen.dark {
+    background: #111;
+}
+
+.nubank-card {
+    background: white;
+    margin: 15px;
+    padding: 18px;
+    border-radius: 18px;
+}
+
+.nubank-card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+}
+
+.nubank-card h1 {
+    margin-top: 10px;
+}
+
+.nubank-screen {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    background: #f5f5f5;
+}
+
+.nubank-screen::-webkit-scrollbar {
+    display: none;
+}
+
+.nubank-header {
+    padding-top: 65px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 20px;
+}
+
+.nubank-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.nubank-logo {
+    color: white;
+}
+
+.nubank-app-logo {
+    color: white;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 1;
+    user-select: none;
+}
+
+.nubank-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+.nubank-user {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 20px;
+    padding-left: 25px;
+}
+
+.danger {
+    color: #ff3b30;
+}
+
+
+
+.nubank-back {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.nubank-action {
+    width: 74px;
+    height: 74px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nubank-content {
+    padding: 20px;
+}
+
+.nubank-content input {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 14px;
+    padding: 0 15px;
+}
+
+.nubank-content button {
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 14px;
+    background: white;
+    font-weight: 600;
+}
+
+.history-item {
+    background: rgba(255, 255, 255, .15);
+    color: white;
+    padding: 15px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+}
+
+.nubank-page {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    background: #8A05BE;
+}
+
+.nubank-page.dark {
+    background: #111;
+}
+
+.nubank-page.dark input {
+    background: #1d1d1d;
+    color: white;
+}
+
+.nubank-page.dark button {
+    background: #2b2b2b;
+    color: white;
+}
+
+.nubank-page.dark .history-item {
+    background: #1c1c1c;
+}
+
+.nubank-page.dark .nubank-page-header {
+    background: #111;
+}
+
+.nubank-screen.dark .nubank-page {
+    background: #111;
+}
+
+.nubank-page-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 25px 20px;
+    background: #8A05BE;
+    color: white;
+    z-index: 999;
+}
+
+.nubank-page::-webkit-scrollbar {
+    display: none;
+}
+
+.nubank-top {
+    background: #8A05BE;
+    min-height: 230px;
+    padding-top: 60px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.toggle-switch {
+    width: 58px;
+    height: 32px;
+    border-radius: 20px;
+    background: #bdbdbd;
+    position: relative;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.toggle-switch.active {
+    background: #0a0a0a;
+}
+
+.toggle-ball {
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: .25s;
+}
+
+.toggle-switch.active .toggle-ball {
+    left: 29px;
+}

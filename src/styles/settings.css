@@ -1,0 +1,35 @@
+/*---------- escala do celular---------*/
+
+.scale-options {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.scale-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 6px 8px;
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    min-width: auto;
+    white-space: nowrap;
+}
+
+.scale-option input {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+}
+
+/*---------- escala do celular---------*/
