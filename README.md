@@ -1,8 +1,37 @@
+ESTRUTURA ATUAL:
+
+src/
+├── apps/
+│   ├── Nubank.jsx
+│   ├── Settings.jsx
+│   ├── Messages.jsx
+│   ├── Phone.jsx
+│   ├── Contacts.jsx
+│   └── Camera.jsx
+│
+├── components/
+│   ├── HomeScreen.jsx
+│   ├── Dock.jsx
+│   ├── LockScreen.jsx
+│   ├── PatternUnlock.jsx
+│   ├── StatusBar.jsx
+│   └── DynamicIsland.jsx
+│
+├── assets/
+│   ├── wallpapers/
+│   └── icons/
+│
+└── styles/
+    ├── iphone.css
+    ├── lockscreen.css
+    └── nubank.css
+
 # 📱 iPhone Framework React - Documentação Resumida
 
 ## 🎯 Objetivo do Projeto
 
-Criar um celular estilo iPhone totalmente funcional para integração com FiveM/NUI utilizando React, reproduzindo a experiência do iOS com aplicativos próprios, tela de bloqueio, notificações e sistema bancário.
+### Criar um celular estilo iPhone totalmente funcional para integração com __FiveM/NUI__ utilizando React, reproduzindo a experiência do iOS com aplicativos próprios, tela de bloqueio, notificações, sistema bancário e muito mais...
+este Smartphone/FiveM traz a melhor experiência possivel e grande imersividade em seu conteúdo, calro que como se trata de um produto digital não terá 100% das funcionalidades de um smartfone fisico Real mas estarei sempre trabalhando com suas atualizaçoes futuras com mais conteúdos que se asemelhão ao produto Real.
 
 ---
 
@@ -16,22 +45,17 @@ Criar um celular estilo iPhone totalmente funcional para integração com FiveM/
 * Barra de status
 * Animação de abrir/fechar com tecla K
 * Escala configurável do aparelho
-* Interface totalmente em Português Brasil
 
 ---
 
-## 🔒 Sistema de Bloqueio
+## 🕒 Sistema de Hora
+* Sincronizado com a web. 
+* Hora e data | Renderizando em tempo Real. |
+
+## 🔒 Sistema de Bloqueio Tela
 
 ### Lock Screen
-
-Implementado:
-
-* Hora em destaque
-* Data
-* Notificações
-* Wallpaper
-* Botão de câmera
-* Clique na tela para abrir desbloqueio
+* Desbloqueio Padrão poor Pin
 
 ### Pattern Unlock
 
@@ -43,6 +67,15 @@ Implementado:
 * Desbloqueio após padrão correto
 * Bloqueio automático ao fechar celular
 
+Implementado:
+
+* Hora em destaque
+* Data
+* Notificações
+* Wallpaper
+* Botão de câmera
+* Clique na tela para abrir desbloqueio
+* 
 ---
 
 ## 🏠 Tela Inicial (Home)
@@ -54,7 +87,9 @@ Implementado:
 * Ícones centralizados
 * Layout estilo iOS
 
-Apps presentes:
+Apps presentes: também escalonavel
+** Podendo ter mais Apps 
+conforme necessidade do usuário
 
 * WhatsApp
 * Instagram
@@ -127,7 +162,7 @@ Implementado:
 
 Faixa:
 
-* 30%
+* 50%
 * até
 * 100%
 
@@ -138,13 +173,9 @@ Faixa:
 Preparado:
 
 * Wallpaper na tela inicial
-* Wallpaper na tela bloqueada
-
-Ainda não implementado:
-
-* Troca de tema pelo usuário
-* Temas claros
-* Temas escuros
+* Wallpaper Carousel na tela bloqueada
+  ** Troca Wallpapers a cada 5min
+  mas tempo pode ser definida pelo usuario
 
 ---
 
@@ -295,3 +326,5 @@ Falta:
 6. Galeria
 7. Temas
 8. Integração completa com FiveM
+
+   # Lembrando que isto tudo é só a Framework
