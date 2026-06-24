@@ -1,4 +1,5 @@
-import wallpaperHome from "../assets/wallpapers/wallpaper-home.jpg";
+import wall1 from "../assets/wallpapers/wall1.jpg";
+
 import {
   FaWhatsapp,
   FaInstagram,
@@ -19,9 +20,7 @@ import {
 
 export default function HomeScreen({ openApp }) {
 
-  const wallpaper =
-    localStorage.getItem("phoneWallpaper") ||
-    wallpaperHome;
+  const wallpaper = wall1;
 
   return (
     <div
@@ -30,6 +29,7 @@ export default function HomeScreen({ openApp }) {
         backgroundImage: `url(${wallpaper})`
       }}
     >
+
       <div className="app-icon">
         <div
           className="icon-box"

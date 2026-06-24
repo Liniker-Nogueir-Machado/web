@@ -1,35 +1,256 @@
-/*---------- escala do celular---------*/
+/* =========================================================
+   ROLAGEM DA PAGINA AJUSTES SEM BARRA VISÍVEL
+========================================================= */
+
+.settings-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.30);
+
+    backdrop-filter:
+        blur(1px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    overflow-y: auto;
+}
+
+.settings-overlay::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+.settings-overlay {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* =========================================================
+   SETTINGS APP
+   Responsável pela estrutura geral da aplicação Ajustes
+========================================================= */
+.settings-screen {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+/* =========================================================
+   HEADER
+   Barra superior contendo voltar e título
+========================================================= */
+.settings-back {
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+/* =========================================================
+   PERFIL DO USUÁRIO
+   Card superior com foto e informações
+========================================================= */
+.profile-avatar {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff;
+    color: #000;
+    font-weight: 700;
+}
+
+.settings-profile-card {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    margin-bottom: 18px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(25px);
+}
+
+/* =========================================================
+   CARDS FLUTUANTES
+   Containers que agrupam opções de ajustes
+========================================================= */
+.settings-card {
+    margin-bottom: 14px;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(25px);
+
+    background: rgba(30, 30, 30, .35);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    overflow: hidden;
+}
+
+.settings-left {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+/* ===================================
+   BARRA SUPERIOR FIXA
+=================================== */
+
+.settings-navbar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 0 20px;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    background: rgba(0, 0, 0, .35);
+}
+
+.settings-navbar h2 {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.settings-container {
+    position: absolute;
+
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow-y: auto;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px;
+}
+
+.settings-row:not(:last-child) {
+    border-bottom:
+        1px solid rgba(255, 255, 255, .08);
+}
+
+.icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+.wifi {
+    background: #007aff;
+}
+
+.bluetooth {
+    background: #0a84ff;
+}
+
+.mobile {
+    background: #34c759;
+}
+
+.bell {
+    background: #ff3b30;
+}
+
+.sound {
+    background: #ff2d55;
+}
+
+.moon {
+    background: #5856d6;
+}
+
+.settings {
+    background: #8e8e93;
+}
+
+.settings-row-title {
+    padding: 15px;
+
+    font-size: 14px;
+
+    opacity: .7;
+}
 
 .scale-options {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-    width: 100%;
-    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding: 0 15px 15px;
 }
 
 .scale-option {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
+    padding: 8px 14px;
 
-    padding: 6px 8px;
-    border-radius: 8px;
+    border-radius: 12px;
 
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, .08);
 
-    min-width: auto;
-    white-space: nowrap;
+    cursor: pointer;
 }
 
 .scale-option input {
-    width: 14px;
-    height: 14px;
-    margin: 0;
+    display: none;
 }
 
-/*---------- escala do celular---------*/
+.scale-option:has(input:checked) {
+    background: #0a84ff;
+}

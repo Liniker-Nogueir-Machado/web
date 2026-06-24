@@ -1,94 +1,203 @@
+import getWallpaper from "../utils/getWallpaper";
 import "../styles/Settings.css";
+
+import {
+  FaWifi,
+  FaBluetoothB,
+  FaBell,
+  FaVolumeUp,
+  FaMoon,
+  FaMobileAlt,
+  FaCog
+} from "react-icons/fa";
+
+const wallpaper = getWallpaper();
 
 export default function Settings({
   goBack,
   phoneScale,
   setPhoneScale
 }) {
-
   return (
-    <div className="app-screen">
+    <div
+      className="settings-screen"
+      style={{
+        backgroundImage: `url(${wallpaper})`
+      }}
+    >
+      <div className="settings-overlay">
 
-      <div className="app-navbar">
+        {/* HEADER */}
+        <div className="settings-navbar">
 
-        <button
-          className="back-btn"
-          onClick={goBack}
-        >
-          ←
-        </button>
+          <button
+            className="settings-back"
+            onClick={goBack}
+          >
+            {"←"}
+          </button>
 
-        <h2>Ajustes</h2>
+          <h2>Ajustes</h2>
+
+        </div>
+
+        {/* CONTEÚDO */}
+        <div className="settings-container">
+
+          {/* PERFIL */}
+          <div className="settings-profile-card">
+
+            <div className="profile-avatar">
+              LM
+            </div>
+
+            <div>
+              <h3>Liniker Machado</h3>
+              <p>iCloud • FiveM Phone</p>
+            </div>
+
+          </div>
+
+          {/* CONECTIVIDADE */}
+          <div className="settings-card">
+
+            <div className="settings-row">
+              <div className="settings-left">
+
+                <div className="icon wifi">
+                  <FaWifi />
+                </div>
+
+                Wi-Fi
+
+              </div>
+
+              <span>Casa</span>
+            </div>
+
+            <div className="settings-row">
+              <div className="settings-left">
+
+                <div className="icon bluetooth">
+                  <FaBluetoothB />
+                </div>
+
+                Bluetooth
+
+              </div>
+
+              <span>Ativado</span>
+            </div>
+
+            <div className="settings-row">
+              <div className="settings-left">
+
+                <div className="icon mobile">
+                  <FaMobileAlt />
+                </div>
+
+                Rede Móvel
+
+              </div>
+            </div>
+
+          </div>
+
+          {/* SISTEMA */}
+          <div className="settings-card">
+
+            <div className="settings-row">
+              <div className="settings-left">
+
+                <div className="icon bell">
+                  <FaBell />
+                </div>
+
+                Notificações
+
+              </div>
+            </div>
+
+            <div className="settings-row">
+              <div className="settings-left">
+
+                <div className="icon sound">
+                  <FaVolumeUp />
+                </div>
+
+                Sons e Vibração
+
+              </div>
+            </div>
+
+            <div className="settings-row">
+              <div className="settings-left">
+
+                <div className="icon moon">
+                  <FaMoon />
+                </div>
+
+                Modo Foco
+
+              </div>
+            </div>
+
+          </div>
+
+          {/* ESCALA */}
+          <div className="settings-card">
+
+            <div className="settings-row-title">
+              Escala do Celular
+            </div>
+
+            <div className="scale-options">
+
+              {[0.5, 0.6, 0.7, 0.8, 0.9, 1].map((scale) => (
+                <label
+                  key={scale}
+                  className="scale-option"
+                >
+                  <input
+                    type="radio"
+                    name="phoneScale"
+                    checked={phoneScale === scale}
+                    onChange={() =>
+                      setPhoneScale(scale)
+                    }
+                  />
+
+                  {Math.round(scale * 100)}%
+
+                </label>
+              ))}
+
+            </div>
+
+          </div>
+
+          {/* SOBRE */}
+          <div className="settings-card">
+
+            <div className="settings-row">
+
+              <div className="settings-left">
+
+                <div className="icon settings">
+                  <FaCog />
+                </div>
+
+                Sistema
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
-
-      <h3>Tamanho do Celular</h3>
-
-      <div className="scale-options">
-        <label className="scale-option">
-          <input
-            type="radio"
-            name="phoneScale"
-            checked={phoneScale === 0.5}
-            onChange={() => setPhoneScale(0.5)}
-          />
-          <span>50%</span>
-        </label>
-
-        <label className="scale-option">
-          <input
-            type="radio"
-            name="phoneScale"
-            checked={phoneScale === 0.6}
-            onChange={() => setPhoneScale(0.6)}
-          />
-          <span>60%</span>
-        </label>
-
-        <label className="scale-option">
-          <input
-            type="radio"
-            name="phoneScale"
-            checked={phoneScale === 0.7}
-            onChange={() => setPhoneScale(0.7)}
-          />
-          <span>70%</span>
-        </label>
-
-        <label className="scale-option">
-          <input
-            type="radio"
-            name="phoneScale"
-            checked={phoneScale === 0.8}
-            onChange={() => setPhoneScale(0.8)}
-          />
-          <span>80%</span>
-        </label>
-
-        <label className="scale-option">
-          <input
-            type="radio"
-            name="phoneScale"
-            checked={phoneScale === 0.9}
-            onChange={() => setPhoneScale(0.9)}
-          />
-          <span>90%</span>
-        </label>
-
-        <label className="scale-option">
-          <input
-            type="radio"
-            name="phoneScale"
-            checked={phoneScale === 1}
-            onChange={() => setPhoneScale(1)}
-          />
-          <span>100%</span>
-        </label>
-      </div>
-
-      <p>{Math.round(phoneScale * 100)}%</p>
-
     </div>
-
   );
 }

@@ -84,7 +84,7 @@
 }
 
 /* =========================================================
-   DESBLOQUEIO POR PADRÃO
+   TELA DE BLOQUEIO POR PADRÃO
 ========================================================= */
 
 .pattern-overlay {
@@ -95,15 +95,16 @@
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 400px;
 
     background:
         rgba(0, 0, 0, .15);
 }
 
 .pattern-grid {
-    width: 180px;
-    height: 180px;
+    width: 300px;
+    height: 300px;
 
     display: grid;
 
@@ -114,24 +115,24 @@
 }
 
 .pattern-dot {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
 
     margin: auto;
 
     border-radius: 50%;
 
-    border: 2px solid white;
+    border: 0.5px solid rgb(180, 180, 180);
 
     background:
-        rgba(255, 255, 255, .08);
+        rgba(255, 255, 255, .25);
 
-    transition: .15s;
+    transition: .08s;
 }
 
 .pattern-dot.active {
-    background: white;
+    background: #fff;
 
     box-shadow:
-        0 0 8px rgba(255, 255, 255, .8);
+        0 0 30px rgba(255, 255, 255, 0.5);
 }

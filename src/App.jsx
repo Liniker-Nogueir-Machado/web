@@ -1,3 +1,5 @@
+import "./styles/iphone.css";
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -7,16 +9,21 @@ import DynamicIsland from "./components/DynamicIsland";
 import StatusBar from "./components/StatusBar";
 import HomeScreen from "./components/HomeScreen";
 
+
 import Settings from "./components/Settings";
 import Nubank from "./apps/Nubank";
 
-import "./styles/iphone.css";
+import usePhoneScale from "./hooks/usePhoneScale";
 
 export default function App() {
   const [locked, setLocked] = useState(true);
   const [open, setOpen] = useState(false);
   const [currentApp, setCurrentApp] = useState("home");
-  const [phoneScale, setPhoneScale] = useState(0.7);
+
+  const {
+    phoneScale,
+    setPhoneScale
+  } = usePhoneScale();
 
   useEffect(() => {
     const handler = (e) => {
