@@ -239,7 +239,7 @@
   background:
     rgba(255, 255, 255, .12);
 
-  backdrop-filter: blur(35px);
+  backdrop-filter: blur(3px);
 
   -webkit-backdrop-filter: blur(35px);
 
@@ -307,15 +307,4 @@
 
 .app-content {
   padding: 20px;
-}
-
-.dark-toggle {
-  border: none;
-  background: transparent;
-
-  color: white;
-
-  font-size: 20px;
-
-  cursor: pointer;
 }

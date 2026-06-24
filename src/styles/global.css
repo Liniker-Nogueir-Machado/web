@@ -27,3 +27,32 @@ img {
     max-width: 100%;
     display: block;
 }
+
+:root {
+    --phone-text-color: white;
+}
+
+[data-text-color="white"] {
+    --phone-text-color: white;
+}
+
+[data-text-color="black"] {
+    --phone-text-color: black;
+}
+
+p,
+span,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+small,
+strong,
+li,
+a {
+    color: var(--phone-text-color);
+}

@@ -272,32 +272,3 @@
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
-
-.toggle-switch {
-    width: 58px;
-    height: 32px;
-    border-radius: 20px;
-    background: #bdbdbd;
-    position: relative;
-    cursor: pointer;
-    transition: .25s;
-}
-
-.toggle-switch.active {
-    background: #0a0a0a;
-}
-
-.toggle-ball {
-    width: 26px;
-    height: 26px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    transition: .25s;
-}
-
-.toggle-switch.active .toggle-ball {
-    left: 29px;
-}

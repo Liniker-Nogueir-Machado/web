@@ -1,4 +1,6 @@
-import wall1 from "../assets/wallpapers/wall1.jpg";
+import { useState, useEffect } from "react";
+
+import getWallpaper from "../utils/getWallpaper";
 
 import {
   FaWhatsapp,
@@ -20,7 +22,28 @@ import {
 
 export default function HomeScreen({ openApp }) {
 
-  const wallpaper = wall1;
+  const [wallpaper, setWallpaper] =
+    useState(getWallpaper());
+
+  useEffect(() => {
+
+    const updateWallpaper = () => {
+      setWallpaper(getWallpaper());
+    };
+
+    window.addEventListener(
+      "wallpaperChanged",
+      updateWallpaper
+    );
+
+    return () => {
+      window.removeEventListener(
+        "wallpaperChanged",
+        updateWallpaper
+      );
+    };
+
+  }, []);
 
   return (
     <div
@@ -133,5 +156,6 @@ export default function HomeScreen({ openApp }) {
       </div>
 
     </div>
+
   );
 }

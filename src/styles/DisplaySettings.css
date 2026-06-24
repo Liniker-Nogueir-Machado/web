@@ -1,0 +1,163 @@
+/* ======================================
+   TELA
+====================================== */
+
+.display-screen {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+}
+
+/* ==========================================
+   TELA DE CONFIGURAÇÃO DE PAPEL DE PAREDE
+========================================== */
+
+.display-screen {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+/* ======================================
+   CONTAINER
+====================================== */
+
+.display-container {
+    position: absolute;
+
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow-y: auto;
+
+    padding: 20px;
+}
+
+/* ======================================
+   CARD
+====================================== */
+
+.display-card {
+
+    border-radius: 24px;
+
+    padding: 18px;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+}
+
+.display-card h3 {
+    margin-bottom: 15px;
+}
+
+/* ======================================
+   SCROLL HORIZONTAL
+====================================== */
+
+.wallpaper-scroll {
+
+    display: flex;
+
+    gap: 14px;
+
+    overflow-x: auto;
+
+    padding-bottom: 8px;
+
+    scroll-behavior: smooth;
+}
+
+/* ======================================
+   BARRA HORIZONTAL
+====================================== */
+
+.wallpaper-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.wallpaper-scroll::-webkit-scrollbar-thumb {
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, .25);
+}
+
+/* ======================================
+   IMAGEM
+====================================== */
+
+.wallpaper-preview {
+
+    min-width: 120px;
+
+    height: 230px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border: 3px solid transparent;
+
+    transition: .2s;
+}
+
+.wallpaper-preview.active {
+
+    border-color:
+        #0A84FF;
+
+    transform:
+        scale(1.02);
+}
+
+.wallpaper-preview img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* ======================================
+   BOTÕES
+====================================== */
+
+.wallpaper-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.wallpaper-actions button {
+
+    flex: 1;
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 12px;
+
+    cursor: pointer;
+}

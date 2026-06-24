@@ -1,5 +1,7 @@
 /* =========================================================
-   ROLAGEM DA PAGINA AJUSTES SEM BARRA VISÍVEL
+   OVERLAY DE ROLAGEM DOS AJUSTES
+   Responsável pelo fundo escurecido com blur
+   e pela rolagem da tela sem exibir scrollbar.
 ========================================================= */
 
 .settings-overlay {
@@ -7,31 +9,34 @@
     inset: 0;
 
     background:
-        rgba(0, 0, 0, 0.30);
+        rgba(0, 0, 0, .18);
 
     backdrop-filter:
-        blur(1px);
+        blur(10px) saturate(150%);
 
     -webkit-backdrop-filter:
-        blur(18px);
-
-    overflow-y: auto;
+        blur(22px) saturate(180%);
 }
 
+/* Oculta scrollbar no Chrome, Edge e Opera */
 .settings-overlay::-webkit-scrollbar {
     width: 0;
     display: none;
 }
 
+/* Oculta scrollbar no Firefox e IE */
 .settings-overlay {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
+
 /* =========================================================
-   SETTINGS APP
-   Responsável pela estrutura geral da aplicação Ajustes
+   TELA PRINCIPAL DOS AJUSTES
+   Container raiz da aplicação Ajustes.
+   Define o wallpaper de fundo.
 ========================================================= */
+
 .settings-screen {
     position: absolute;
     inset: 0;
@@ -43,10 +48,12 @@
     overflow: hidden;
 }
 
+
 /* =========================================================
-   HEADER
-   Barra superior contendo voltar e título
+   BOTÃO VOLTAR
+   Responsável pelo botão ← da navbar.
 ========================================================= */
+
 .settings-back {
     border: none;
     background: transparent;
@@ -58,24 +65,41 @@
     cursor: pointer;
 }
 
+
 /* =========================================================
    PERFIL DO USUÁRIO
-   Card superior com foto e informações
+   Avatar circular exibido no topo dos ajustes.
 ========================================================= */
+
 .profile-avatar {
-    width: 58px;
-    height: 58px;
+    width: 60px;
+    height: 60px;
 
     border-radius: 50%;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    background: #fff;
-    color: #000;
+    background:
+        rgba(255, 255, 255, .15);
+
+    backdrop-filter:
+        blur(20px);
+
+    color: white;
+
     font-weight: 700;
+
+    border:
+        1px solid rgba(255, 255, 255, .15);
 }
+
+
+/* =========================================================
+   CARD DO PERFIL ESTILO iOS
+   Container com nome e informações da conta.
+========================================================= */
 
 .settings-profile-card {
     display: flex;
@@ -83,34 +107,64 @@
 
     gap: 15px;
 
-    padding: 15px;
+    padding: 18px;
 
     margin-bottom: 18px;
 
     border-radius: 24px;
 
-    background: rgba(255, 255, 255, .08);
+    background:
+        rgba(255, 255, 255, .10);
 
-    backdrop-filter: blur(25px);
+    backdrop-filter:
+        blur(45px) saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(45px) saturate(180%);
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .12),
+        0 12px 40px rgba(0, 0, 0, .18);
 }
 
+
 /* =========================================================
-   CARDS FLUTUANTES
-   Containers que agrupam opções de ajustes
+   CARDS DE AJUSTES ESTILO iOS
+   Containers flutuantes com efeito glassmorphism.
 ========================================================= */
+
 .settings-card {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
-    backdrop-filter: blur(25px);
+    background:
+        rgba(255, 255, 255, .08);
 
-    background: rgba(30, 30, 30, .35);
+    backdrop-filter:
+        blur(40px) saturate(180%);
 
-    border: 1px solid rgba(255, 255, 255, .08);
+    -webkit-backdrop-filter:
+        blur(40px) saturate(180%);
+
+    border:
+        1px solid rgba(255, 255, 255, .10);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .12),
+        0 10px 35px rgba(0, 0, 0, .15);
 
     overflow: hidden;
 }
+
+
+/* =========================================================
+   LADO ESQUERDO DAS LINHAS
+   Agrupa ícone + texto da opção.
+========================================================= */
 
 .settings-left {
     display: flex;
@@ -119,12 +173,19 @@
     gap: 12px;
 }
 
-/* ===================================
-   BARRA SUPERIOR FIXA
-=================================== */
+.settings-left,
+span,
+p {
+    color: #fff;
+}
+
+/* =========================================================
+   NAVBAR FIXA ESTILO iOS
+   Barra superior que permanece fixa durante a rolagem.
+========================================================= */
 
 .settings-navbar {
-    position: absolute;
+    position: fixed;
 
     top: 0;
     left: 0;
@@ -140,31 +201,67 @@
 
     z-index: 9999;
 
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    background: rgba(25, 25, 25, 0.25);
 
-    background: rgba(0, 0, 0, .35);
+    backdrop-filter:
+        blur(40px) saturate(180%);
+
+    -webkit-backdrop-filter:
+        blur(40px) saturate(180%);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .08);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .08);
 }
+
+
+/* =========================================================
+   TÍTULO DA NAVBAR
+========================================================= */
 
 .settings-navbar h2 {
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 30px;
+    top: 10px;
+    position: relative;
+    font-weight: 500;
+    color: #fff;
 }
+
+
+/* =========================================================
+   CONTAINER PRINCIPAL
+   Área rolável onde ficam todos os cards.
+========================================================= */
 
 .settings-container {
     position: absolute;
 
-    top: 70px;
-    left: 0;
-    right: 0;
+    top: 90px;
+    left: 12px;
+    right: 12px;
     bottom: 0;
 
     overflow-y: auto;
 
-    padding: 20px;
+    padding-bottom: 40px;
 
     box-sizing: border-box;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
+
+.settings-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   LINHAS DOS CARDS
+   Cada item individual dentro dos ajustes.
+========================================================= */
 
 .settings-row {
     display: flex;
@@ -174,10 +271,18 @@
     padding: 16px;
 }
 
+
+/* Linha divisória automática */
 .settings-row:not(:last-child) {
     border-bottom:
-        1px solid rgba(255, 255, 255, .08);
+        1px solid rgba(109, 109, 109, 0.301);
 }
+
+
+/* =========================================================
+   ÍCONES DOS AJUSTES
+   Base compartilhada para todos os ícones.
+========================================================= */
 
 .icon {
     width: 34px;
@@ -191,6 +296,11 @@
 
     color: white;
 }
+
+
+/* =========================================================
+   CORES DOS ÍCONES
+========================================================= */
 
 .wifi {
     background: #007aff;
@@ -220,6 +330,12 @@
     background: #8e8e93;
 }
 
+
+/* =========================================================
+   TÍTULO DE SEÇÕES
+   Exemplo: "Escala do Celular".
+========================================================= */
+
 .settings-row-title {
     padding: 15px;
 
@@ -227,6 +343,12 @@
 
     opacity: .7;
 }
+
+
+/* =========================================================
+   GRID DE ESCALAS
+   Área com as opções 50%, 60%, 70%...
+========================================================= */
 
 .scale-options {
     display: flex;
@@ -237,20 +359,89 @@
     padding: 0 15px 15px;
 }
 
+
+/* =========================================================
+   BOTÃO DE ESCALA
+========================================================= */
+
 .scale-option {
     padding: 8px 14px;
 
     border-radius: 12px;
 
-    background: rgba(255, 255, 255, .08);
+    background: rgba(8, 8, 8, 0.336);
 
     cursor: pointer;
+
+    transition: .2s;
 }
 
+
+/* Esconde radio button padrão */
 .scale-option input {
     display: none;
 }
 
+
+/* =========================================================
+   ESCALA SELECIONADA
+   Destaca a opção atualmente ativa.
+========================================================= */
+
 .scale-option:has(input:checked) {
-    background: #0a84ff;
+    background: rgba(255, 255, 255, 0.336);
+
+    color: white;
+}
+
+/* =========================================================
+   TOOGLE BUTTON
+   botão switch ativa ou desabilita dunções dos ajustes do celular.
+========================================================= */
+/* =========================
+   TOGGLE IOS
+========================= */
+
+.toggle-switch {
+    width: 52px;
+    height: 30px;
+
+    border-radius: 999px;
+
+    background: rgba(80, 80, 80, .55);
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+
+    flex-shrink: 0;
+}
+
+.toggle-switch.active {
+    background: #34C759;
+}
+
+.toggle-ball {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    position: absolute;
+
+    top: 3px;
+    left: 3px;
+
+    transition: all .25s ease;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, .25);
+}
+
+.toggle-switch.active .toggle-ball {
+    left: 25px;
 }
