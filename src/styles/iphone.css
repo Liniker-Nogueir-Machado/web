@@ -109,21 +109,33 @@
 }
 
 /* =========================================================
-   ÍCONES DOS APPS
+   ÍCONES DOS APPS COM EFEITO HOVER 
+   Aumenta levemente o ícone ao passar o mouse
 ========================================================= */
 
 .app-icon {
   display: flex;
   flex-direction: column;
-
+  transition:
+    transform .18s ease,
+    filter .18s ease;
   align-items: center;
   justify-content: flex-start;
-
+  cursor: pointer;
   text-align: center;
 
   color: white;
   font-size: 13px;
 }
+
+.app-icon:hover {
+  transform: scale(1.08);
+
+  filter:
+    brightness(1.08);
+}
+
+/*=======================================*/
 
 .app-icon span {
   font-size: 13px;

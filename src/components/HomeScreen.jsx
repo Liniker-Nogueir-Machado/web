@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-
+import { useRef, useState, useEffect } from "react";
+import tapSound from "../assets/sounds/tap.mp3"
 import getWallpaper from "../utils/getWallpaper";
 
 import {
@@ -21,6 +21,28 @@ import {
 } from "react-icons/si";
 
 export default function HomeScreen({ openApp }) {
+
+  const tapAudio = useRef(null);
+
+  useEffect(() => {
+
+    tapAudio.current = new Audio(tapSound);
+
+    tapAudio.current.volume = 0.15;
+
+  }, []);
+
+  const playHoverSound = () => {
+
+    if (!tapAudio.current) return;
+
+    tapAudio.current.pause();
+
+    tapAudio.current.currentTime = 0;
+
+    tapAudio.current.play().catch(() => { });
+
+  };
 
   const [wallpaper, setWallpaper] =
     useState(getWallpaper());
@@ -53,20 +75,37 @@ export default function HomeScreen({ openApp }) {
       }}
     >
 
-      <div className="app-icon">
+      <div
+        className="app-icon"
+        onMouseEnter={playHoverSound}
+      >
         <div
           className="icon-box"
           style={{ background: "#25D366" }}
         >
-          <FaWhatsapp size={38} color="white" />
+          <FaWhatsapp
+            size={38}
+            color="white"
+          />
         </div>
+
         WhatsApp
       </div>
 
-      <div className="app-icon">
-        <div className="icon-box instagram-icon">
-          <FaInstagram size={38} color="white" />
+      <div
+        className="app-icon"
+        onMouseEnter={playHoverSound}
+      >
+        <div
+          className="icon-box"
+          style={{ background: "#25D366" }}
+        >
+          <FaInstagram
+            size={38}
+            color="white"
+          />
         </div>
+
         Instagram
       </div>
 
@@ -75,83 +114,138 @@ export default function HomeScreen({ openApp }) {
         onClick={() => openApp("nubank")}
       >
         <div
-          className="icon-box"
-          style={{
-            background: "#820AD1"
-          }}
+          className="app-icon"
+          onMouseEnter={playHoverSound}
         >
-          <span className="nubank-app-logo">
-            Nu
-          </span>
+          <div
+            className="icon-box"
+            style={{ background: "#7025d3" }}
+          >
+            <span className="nubank-app-logo">
+              Nu
+            </span>
+          </div>
         </div>
 
         Nubank
       </div>
 
-      <div className="app-icon">
+      <div
+        className="app-icon"
+        onMouseEnter={playHoverSound}
+      >
         <div
           className="icon-box"
-          style={{ background: "#000" }}
+          style={{ background: "#000000" }}
         >
-          <SiUber size={38} color="white" />
+          <SiUber
+            size={38}
+            color="white"
+          />
         </div>
+
         Uber
-      </div>
-
-      <div className="app-icon">
-        <div
-          className="icon-box"
-          style={{ background: "#33CCFF" }}
-        >
-          <IoMap size={38} color="white" />
-        </div>
-        Waze
-      </div>
-
-      <div className="app-icon">
-        <div
-          className="icon-box"
-          style={{ background: "#FFF" }}
-        >
-          <IoCalendar size={38} color="#FF3B30" />
-        </div>
-        Calendário
-      </div>
-
-      <div className="app-icon">
-        <div className="icon-box notes-icon">
-          <FaStickyNote size={34} color="#666" />
-        </div>
-        Notas
-      </div>
-
-      <div className="app-icon">
-        <div className="icon-box calc-icon">
-          <FaCalculator size={34} color="white" />
-        </div>
-        Calculadora
-      </div>
-
-      <div className="app-icon">
-        <div
-          className="icon-box"
-          style={{ background: "#0A84FF" }}
-        >
-          <FaAppStoreIos size={38} color="white" />
-        </div>
-        App Store
       </div>
 
       <div
         className="app-icon"
-        onClick={() => openApp("settings")}
+        onMouseEnter={playHoverSound}
       >
         <div
           className="icon-box"
-          style={{ background: "#8E8E93" }}
+          style={{ background: "#259cd3" }}
         >
-          <FaCog size={38} color="white" />
+          <IoMap
+            size={38}
+            color="white"
+          />
         </div>
+
+        Waze
+      </div>
+
+      <div
+        className="app-icon"
+        onMouseEnter={playHoverSound}
+      >
+        <div
+          className="icon-box"
+          style={{ background: "#25D366" }}
+        >
+          <IoCalendar
+            size={38}
+            color="white"
+          />
+        </div>
+
+        Calendário
+      </div>
+
+      <div
+        className="app-icon"
+        onMouseEnter={playHoverSound}
+      >
+        <div
+          className="icon-box"
+          style={{ background: "#25D366" }}
+        >
+          <FaStickyNote
+            size={38}
+            color="white"
+          />
+        </div>
+
+        Notas
+      </div>
+
+      <div
+        className="app-icon"
+        onMouseEnter={playHoverSound}
+      >
+        <div
+          className="icon-box"
+          style={{ background: "#25D366" }}
+        >
+          <FaCalculator
+            size={38}
+            color="white"
+          />
+        </div>
+
+        Calculadora
+      </div>
+
+      <div
+        className="app-icon"
+        onMouseEnter={playHoverSound}
+      >
+        <div
+          className="icon-box"
+          style={{ background: "#25D366" }}
+        >
+          <FaAppStoreIos
+            size={38}
+            color="white"
+          />
+        </div>
+
+        Apple Store
+      </div>
+
+      <div
+        className="app-icon"
+        onMouseEnter={playHoverSound}
+      >
+        <div
+          className="icon-box"
+          style={{ background: "#25D366" }}
+        >
+          <FaCog
+            size={38}
+            color="white"
+          />
+        </div>
+
         Ajustes
       </div>
 
