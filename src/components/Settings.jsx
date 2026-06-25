@@ -6,6 +6,11 @@ import getWallpaper from "../utils/getWallpaper";
 import "../styles/Settings.css";
 
 import {
+  getSoundEnabled,
+  setSoundEnabled as saveSoundEnabled
+} from "../utils/soundSettings";
+
+import {
   FaWifi,
   FaBluetoothB,
   FaBell,
@@ -42,10 +47,8 @@ export default function Settings({
       localStorage.getItem("notificationsEnabled") !== "false"
     );
 
-  const [soundEnabled, setSoundEnabled] =
-    useState(
-      localStorage.getItem("soundEnabled") !== "false"
-    );
+  const [soundEnabled, setLocalSoundEnabled] =
+    useState(getSoundEnabled());
 
   const [doNotDisturb, setDoNotDisturb] =
     useState(
@@ -72,13 +75,6 @@ export default function Settings({
       notificationsEnabled
     );
   }, [notificationsEnabled]);
-
-  useEffect(() => {
-    localStorage.setItem(
-      "soundEnabled",
-      soundEnabled
-    );
-  }, [soundEnabled]);
 
   useEffect(() => {
     localStorage.setItem(
@@ -144,22 +140,18 @@ export default function Settings({
             <div className="settings-row">
 
               <div className="settings-left">
-
                 <div className="icon wifi">
                   <FaWifi />
                 </div>
 
                 <p>Wi-Fi</p>
-
               </div>
 
               <div
                 className={`toggle-switch ${wifiEnabled ? "active" : ""
                   }`}
                 onClick={() =>
-                  setWifiEnabled(
-                    !wifiEnabled
-                  )
+                  setWifiEnabled(!wifiEnabled)
                 }
               >
                 <div className="toggle-ball" />
@@ -252,15 +244,22 @@ export default function Settings({
               </div>
 
               <div
-                className={`toggle-switch ${soundEnabled
-                  ? "active"
-                  : ""
+                className={`toggle-switch ${soundEnabled ? "active" : ""
                   }`}
-                onClick={() =>
-                  setSoundEnabled(
-                    !soundEnabled
-                  )
-                }
+                onClick={() => {
+
+                  const newValue =
+                    !soundEnabled;
+
+                  setLocalSoundEnabled(
+                    newValue
+                  );
+
+                  saveSoundEnabled(
+                    newValue
+                  );
+
+                }}
               >
                 <div className="toggle-ball" />
               </div>
@@ -312,7 +311,7 @@ export default function Settings({
                   <FaPalette />
                 </div>
 
-                <p>Tela</p>
+                <p>Tela e papel de parede</p>
 
               </div>
 
@@ -389,7 +388,7 @@ export default function Settings({
 
       </div>
 
-    </div>
+    </div >
 
   );
 }

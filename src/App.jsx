@@ -20,6 +20,57 @@ export default function App() {
 
   const [open, setOpen] = useState(false); // Celular já aparece aberto //
 
+  useEffect(() => { // bloquear seleçao de texto ao usuário //
+
+    const disableContextMenu = (e) => {
+      e.preventDefault();
+    };
+
+    document.addEventListener(
+      "contextmenu",
+      disableContextMenu
+    );
+
+    return () => {
+
+      document.removeEventListener(
+        "contextmenu",
+        disableContextMenu
+      );
+
+    };
+
+  }, []);
+
+  useEffect(() => { // Bloquear seleção ao arrastar mouse //
+
+    const preventSelection = (e) => {
+
+      if (
+        e.target.closest(".app-icon")
+      )
+        return;
+
+      e.preventDefault();
+
+    };
+
+    document.addEventListener(
+      "selectstart",
+      preventSelection
+    );
+
+    return () => {
+
+      document.removeEventListener(
+        "selectstart",
+        preventSelection
+      );
+
+    };
+
+  }, []);
+
   const [currentApp, setCurrentApp] =
     useState("home");
 
