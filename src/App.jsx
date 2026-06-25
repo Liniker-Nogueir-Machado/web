@@ -18,7 +18,7 @@ export default function App() {
 
   const [locked, setLocked] = useState(true);
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false); // Celular já aparece aberto //
 
   const [currentApp, setCurrentApp] =
     useState("home");

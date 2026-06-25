@@ -49,7 +49,7 @@
 .nubank-screen.dark h1,
 .nubank-screen.dark h2,
 .nubank-screen.dark h3 {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .nubank-screen.dark span {
@@ -134,7 +134,7 @@
 }
 
 .nubank-logo {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .nubank-app-logo {
